@@ -6,6 +6,8 @@ stories:
   steps: 
   - intent: greet
   - action: utter_greet
+  - intent: buy_phone
+  - action: utter_buy_phone
   # - intent: ask_price
   # - action: utter_price
   - intent: goodbye

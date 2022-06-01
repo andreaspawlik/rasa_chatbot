@@ -4,6 +4,7 @@ intents:
   - greet
   - goodbye
   - ask_price
+  - buy_phone
 #  - bot_challenge
 
 responses:
@@ -31,6 +32,8 @@ responses:
   - text: How large should the memory be?
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_buy_phone:
+  - text: Which phone do you like?
 
 actions:
   - action_provide_price

@@ -37,6 +37,15 @@ nlu:
     - How much does a [SAMSUNG](brand) [S22 Ultra](model) in [white](color) with [128G](storage) cost?
     - How much is an [Apple](brand) [iPhone 13](model) in [green](color) with [256G](storage)?
 
+- intent: buy_phone
+  examples: |
+    - I would like to buy a phone.
+    - do you sell phones?
+    - Can i buy a phone from you?
+    - do you have phones?
+    - I want a phone
+    - phones
+
 #- intent: bot_challenge
 #  examples: |
 #    - are you a bot?
