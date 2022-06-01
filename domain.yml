@@ -21,6 +21,14 @@ responses:
   - text: "All slots are filled. well done!"
   utter_slots_values:
   - text: "{brand}, {model}, {color}, {storage}"
+  utter_ask_brand:
+  - text: Which brand do you want?
+  utter_ask_model:
+  - text: Which model do you want?
+  utter_ask_color:
+  - text: Which color do you want?
+  utter_ask_storage:
+  - text: How large should the memory be?
 
 actions:
   - action_provide_price
