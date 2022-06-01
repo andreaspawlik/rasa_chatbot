@@ -4,7 +4,7 @@ intents:
   - greet
   - goodbye
   - ask_price
-  - bot_challenge
+#  - bot_challenge
 
 responses:
   utter_greet:
@@ -13,8 +13,8 @@ responses:
   - text: "999 euros."
   utter_goodbye:
   - text: "Bye"
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+#  utter_iamabot:
+#  - text: "I am a bot, powered by Rasa."
   utter_submit:
   - text: "Form has been submitted."
   utter_phone_form_filled: 
@@ -29,6 +29,8 @@ responses:
   - text: Which color do you want?
   utter_ask_storage:
   - text: How large should the memory be?
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
 
 actions:
   - action_provide_price
