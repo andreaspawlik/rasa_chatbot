@@ -1,0 +1,66 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_price
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_price:
+  - text: "999 euros."
+  utter_goodbye:
+  - text: "Bye"
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_submit:
+  - text: "Form has been submitted."
+  utter_phone_form_filled: 
+  - text: "All slots are filled. well done!"
+  utter_slots_values:
+  - text: "{brand}, {model}, {color}, {storage}"
+
+actions:
+  - action_provide_price
+
+entities: 
+- brand
+- model
+- color
+- storage
+
+slots: 
+  brand:
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: brand
+  model: 
+    type: text
+    mappings:
+    - type: from_entity
+      entity: model
+  color: 
+    type: text
+    mappings:
+    - type: from_entity
+      entity: color
+  storage: 
+    type: text
+    mappings:
+    - type: from_entity
+      entity: storage
+      
+forms:
+  phone_form:
+    required_slots:
+      - brand
+      - model
+      - color
+      - storage
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
