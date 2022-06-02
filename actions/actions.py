@@ -11,10 +11,24 @@ from typing import Any, Text, Dict, List
 from xml.parsers.expat import model
 
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 import pandas as pd
 from fuzzywuzzy import fuzz, process
 
+
+def find_best_match(item_list, user_input, cap = 30):
+    result = user_input
+    ratio = 0
+   
+    for item in item_list:
+        item_ratio = fuzz.ratio(item.lower(), user_input.lower())
+       
+        if item_ratio >= cap and item_ratio > ratio:
+            result = item
+            ratio = item_ratio
+   
+    return result
 
 class ActionProvidePrice(Action):
 
@@ -31,21 +45,21 @@ class ActionProvidePrice(Action):
         storage = tracker.get_slot('storage')
         
         df = pd.read_pickle('inventory.pkl')
-        # this part of the code allows typos in user input. threshold is 80% simiarity. 
+        # this part of the code allows typos in user input. 
         list_brand = df.Brand.unique().tolist()
+        brand = find_best_match(list_brand, brand, cap=60)
+
         list_color = df.Color.unique().tolist()
-        for lb in list_brand:
-            if fuzz.ratio(lb.lower(), brand.lower()) >= 80:
-                brand = lb
-                break
-        for lc in list_color:
-            if fuzz.ratio(lc.lower(), color.lower()) >= 80:
-                color = lc
-                break
+        color = find_best_match(list_color, color, cap=60)
+        
+        dispatcher.utter_message(text=f'Slot values: {brand}, {model}, {color}, {storage}')
 
-        price = df[(df.Brand==brand) & (df.Type==model) & (df.Storage==storage) & (df.Color==color)]['Price'].item()
-
-        msg = f'The price {price} euros!'
-        dispatcher.utter_message(text=msg)
-
-        return 'hahaha'
+        msg = 'The item cannot be found in the catalogue.'
+        matches = df[(df.Brand==brand) & (df.Type==model) & (df.Storage==storage) & (df.Color==color)]['Price']
+        if len(matches) >= 1: 
+            price = matches.item()
+            msg = f'The price {price} euros!'
+            dispatcher.utter_message(text=msg)
+        else:
+            dispatcher.utter_message(text=msg)
+            return [SlotSet('brand', None), SlotSet('model', None), SlotSet('color', None), SlotSet('storage', None)]

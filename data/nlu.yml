@@ -1,6 +1,7 @@
 version: "3.1"
 
 nlu:
+
 - intent: greet
   examples: |
     - hey
@@ -16,7 +17,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -29,14 +29,29 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: ask_price
   examples: |
     - How much is an [iPhone 13](model)?
     - How much does a top-tier [SAMSUNG](brand) [S22 Ultra](model) cost?
     - How much does a [SAMSUNG](brand) [S22 Ultra](model) in [white](color) with [128G](storage) cost?
     - How much is an [Apple](brand) [iPhone 13](model) in [green](color) with [256G](storage)?
-
+    - How much is a [samsung](brand) [s22](model) in [black](color) with [512G](storage)?
+    - how much is [samsung](brand) [s22](model) in [black](color) with [512G](storage)?
+    - how much is [Samsung](brand) [S22 Ultra](model) in [Black](color) with [512G](storage)?
+    - how much is [Samsung](brand) [S22 Ultra](model) in [white](color) with [256G](storage)?
+    - how much is [Huawei](brand) [P50 Pro](model) in [green](color) with [512G](storage)?
+    - how much is [Huawei](brand) [P50](model) in [pink](color) with [512G](storage)?
+    - how much is [apple](brand) [iPhone 13 mini](model) in [red](color) with [512G](storage)?
+    - how much is [apple](brand) [iphone 13 pro max](model) in [white](color) with [1TB](storage)?
+    - how much is [Samsung](brand) [S22 Ultra](model) in [blue](color) with [1TB](storage)?
+    - What does an [Huawai](brand) with [512GB](storage) costs?
+    - What is the price of a [Apple](brand) [iphone 13](model)?
+- intent: offend
+  examples: |
+    - I hate you!
+    - You are worthless
+    - You are a bad Chat Bot
+    - You cant do shit
 - intent: buy_phone
   examples: |
     - I would like to buy a phone.
@@ -45,10 +60,37 @@ nlu:
     - do you have phones?
     - I want a phone
     - phones
-
-#- intent: bot_challenge
-#  examples: |
-#    - are you a bot?
-#    - are you a human?
-#    - am I talking to a bot?
-#    - am I talking to a human?
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: ask_feelings
+  examples: |
+    - how are you?
+    - are you fine?
+    - how do you feel?
+    - what do you feel?
+    - do you feel?
+    - how is your mood?
+- intent: ask_other_articles
+  examples: |
+    - are you selling friges?
+    - are you selling chocolate?
+    - do you sell other thinks then phones?
+    - do you sell other tinks?
+    - can i buy anything els from you?
+- intent: out_of_scope
+  examples: |
+    - what is 2+2?
+    - how old is the earth?
+    - do you like chicken?
+    - who is the president of the US right now?
+    - is there a dark side of the moon?
+- intent: ask_bot_name
+  examples: |
+    - what your name?
+    - do you have name?
+    - tell me your name
+    - give me your name
