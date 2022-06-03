@@ -18,17 +18,17 @@ rules:
   - action: phone_form
   - active_loop: phone_form
 
-# - rule: Submit form
-#   condition:
-#   # Condition that form is active.
-#   - active_loop: phone_form
-#   steps:
-#   # Form is deactivated
-#   - action: phone_form
-#   - active_loop: null
-#   - slot_was_set:
-#     - requested_slot: null
-#   # The actions we want to run when the form is submitted.
-#   - action: utter_phone_form_filled
-#   - action: action_provide_price
-#   # 
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: phone_form
+  steps:
+  # Form is deactivated
+  - action: phone_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_phone_form_filled
+  - action: utter_slots_values
+  - action: action_provide_price

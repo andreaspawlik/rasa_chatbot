@@ -2,90 +2,23 @@ version: "3.1"
 
 stories:
 
-- story: buy phone
+- story: buy phone happy path
   steps: 
   - intent: greet
   - action: utter_greet
   - intent: buy_phone
   - action: utter_buy_phone
-  # - intent: ask_price
-  # - action: utter_price
+  # - intent: ask_price ## is included as rule
+  # - action: utter_price  ## is included as rule
   - intent: goodbye
   - action: utter_goodbye
 
-# - story: buy phone
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - active_loop: null
-#   - intent: ask_price
-#   - action: phone_form
-#   - active_loop: phone_form
-#   - intent: stop_asking
-#   - action: utter_phone_form_filled
-#   - action: utter_slots_values
-#   - action: action_provide_price
-#   # - action: action_deactivate_loop
-#   - active_loop: null
-
-- story: interactive_story_1
-  steps:
-  - intent: ask_price
-    entities:
-    - brand: samsung
-    - model: s22
-    - color: black
-    - storage: 512G
-  - slot_was_set:
-    - brand: samsung
-  - slot_was_set:
-    - model: s22
-  - slot_was_set:
-    - color: black
-  - slot_was_set:
-    - storage: 512G
-  - action: phone_form
-  - active_loop: phone_form
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_phone_form_filled
-  - action: action_provide_price
-  - slot_was_set:
-    - brand: null
-  - slot_was_set:
-    - model: null
-  - slot_was_set:
-    - color: null
-  - slot_was_set:
-    - storage: null
-  - intent: ask_price
-    entities:
-    - brand: Samsung
-    - model: S22 Ultra
-    - color: Black
-    - storage: 512G
-  - slot_was_set:
-    - brand: Samsung
-  - slot_was_set:
-    - model: S22 Ultra
-  - slot_was_set:
-    - color: Black
-  - slot_was_set:
-    - storage: 512G
-  - action: phone_form
-  - active_loop: phone_form
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_phone_form_filled
-
-- story: chalange bot
+- story: challenge bot
   steps:
   - intent: greet
   - action: utter_greet
   - intent: bot_challenge
-  - action: utter_bot_chalange
+  - action: utter_bot_challenge
   - intent: ask_bot_name
   - action: utter_ask_bot_name
   - intent: ask_feelings
@@ -96,8 +29,3 @@ stories:
   - action: utter_offend
   - intent: goodbye
   - action: utter_goodbye
-# - story: interactive_story_1
-#   steps:
-#   - intent: ask_feelings
-#   - action: utter_ask_feelings
-#   - intent: ask_feelings

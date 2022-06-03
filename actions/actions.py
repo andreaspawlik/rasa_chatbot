@@ -45,21 +45,34 @@ class ActionProvidePrice(Action):
         storage = tracker.get_slot('storage')
         
         df = pd.read_pickle('inventory.pkl')
-        # this part of the code allows typos in user input. 
+       
+        # this part of the code allows typos in user input.
+        #  
         list_brand = df.Brand.unique().tolist()
         brand = find_best_match(list_brand, brand, cap=60)
 
+        list_model = df.Type.unique().tolist()
+        model = find_best_match(list_model, model, cap=60)
+
         list_color = df.Color.unique().tolist()
         color = find_best_match(list_color, color, cap=60)
+    
+        storage = ''.join(i for i in storage if i.isdigit()) ## remove nondigits
+        storage += 'G' ## add unit as in the table
         
-        dispatcher.utter_message(text=f'Slot values: {brand}, {model}, {color}, {storage}')
+        msg = f'slot values: {brand}, {model}, {color}, {storage}'
+        dispatcher.utter_message(text=msg)
 
-        msg = 'The item cannot be found in the catalogue.'
-        matches = df[(df.Brand==brand) & (df.Type==model) & (df.Storage==storage) & (df.Color==color)]['Price']
-        if len(matches) >= 1: 
+        try:
+            matches = df[(df.Brand==brand) & (df.Type==model) & (df.Storage==storage) & (df.Color==color)]['Price']
+
             price = matches.item()
             msg = f'The price {price} euros!'
             dispatcher.utter_message(text=msg)
-        else:
+
+        except:
+
+            msg = 'The item cannot be found in the catalogue.'
             dispatcher.utter_message(text=msg)
-            return [SlotSet('brand', None), SlotSet('model', None), SlotSet('color', None), SlotSet('storage', None)]
+
+        #return [SlotSet('brand', None), SlotSet('model', None), SlotSet('color', None), SlotSet('storage', None)]
