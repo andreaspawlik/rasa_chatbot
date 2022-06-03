@@ -34,12 +34,16 @@ Code has been only set up locally. To run the bot, follow these steps:
     1. Open a second terminal and start the bot by `rasa shell`. 
     2. You can now chat with the bot. :) 
 
-## To-do
+## Known issues
+
+
+## Future features
 
 Due to time constraint, following nice-to-have features haven't been implemented yet:
 
 - Run bot on a server
 - Use endpoint to connect bot with MS teams
+- if an item could not be found (e.g., Samsung iphone), the bot should propose an alternative (e.g., "did you mean Apple iphone?")
 - Implementation of different languages (DE, CN etc)
 - More semantic logics, e.g. “give top-tier smartphone” -> return the most phones
 - Contextual understanding

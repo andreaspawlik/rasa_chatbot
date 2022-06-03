@@ -1,0 +1,41 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hi 
+    - hallo
+    - hi
+    - Guten Tag
+    - Guten Abend
+    - Guten Morgen
+  
+
+- intent: goodbye
+  examples: |
+    - Bis später
+    - Bis bald
+    - Auf Wiedersehen
+    - Tschüss
+   
+- intent: ask_price
+  examples: |
+    - Wie teuer ist ein[iPhone 13](model)?
+    - Wieviel kostet ein [SAMSUNG](brand) [S22 Ultra](model)?
+    - Wieviel kostet ein [SAMSUNG](brand) [S22 Ultra](model) in [weiss](color) mit [128G](storage) cost?
+    - Wie teuer ist ein [Apple](brand) [iPhone 13](model) in [grün](color) mit [256G](storage)?
+
+- intent: buy_phone
+  examples: |
+    - Ich möchte ein handy kaufen
+    - Verkaufen Sie Handys?
+    - I will ein Handy
+    - Gibt es hier Handys?
+    - Handys
+
+#- intent: bot_challenge
+#  examples: |
+#    - are you a bot?
+#    - are you a human?
+#    - am I talking to a bot?
+#    - am I talking to a human?
