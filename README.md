@@ -25,7 +25,19 @@ Due to time constraint, following nice-to-have features haven't been implemented
 
 ## Getting Started
 
+### Requirement
+
 - python 3.7 or 3.8
 - pandas
 - rasa 3.1 ([Here for step-by-step installation](https://rasa.com/docs/rasa/installation/))
 - fuzzywuzzy: `pip install fuzzywuzzy`
+
+### Starting the bot
+
+Code has been only setup locally.
+
+1. Start the action server:
+  1. Navigate to your rasa directory. 
+  2. `rasa run actions` . This starts the server for the custom action. Keep this tab open and running when testing the bot. 
+  3. Open a second terminal and start the bot by `rasa shell`. 
+  4. You can now chat with the bot. :) 
