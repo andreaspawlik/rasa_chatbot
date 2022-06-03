@@ -24,14 +24,15 @@ Build a chatbot to implement a self-service channel to customers.
 
 ### Starting the bot
 
-Code has been only setup locally.
+Code has been only set up locally. To run the bot, follow these steps: 
 
-1. Start the action server:
-  1. Navigate to your rasa directory. 
-  2. `rasa run actions` . This starts the server for the custom action. Keep this tab open and running when testing the bot. 
+1. Start the action server.
+    1. Navigate to your rasa directory. 
+    2. `rasa run actions` . This starts the server for the custom action. 
+    3. Keep this tab open and running when testing the bot. 
 2. Start the bot. 
-  1. Open a second terminal and start the bot by `rasa shell`. 
-  2. You can now chat with the bot. :) 
+    1. Open a second terminal and start the bot by `rasa shell`. 
+    2. You can now chat with the bot. :) 
 
 ## To-do
 
