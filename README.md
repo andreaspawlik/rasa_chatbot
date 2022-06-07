@@ -31,8 +31,10 @@ Code has been only set up locally. To run the bot, follow these steps:
     2. `rasa run actions` . This starts the server for the custom action. 
     3. Keep this tab open and running when testing the bot. 
 2. Start the bot. 
-    1. Open a second terminal and start the bot by `rasa shell`. 
-    2. You can now chat with the bot. :) 
+    1. Open a second terminal 
+    3. Train the bot by `rasa train`
+    2. Start the bot by `rasa shell`
+    2. You can now chat with the bot :) 
 
 ## Known issues
 
