@@ -38,6 +38,8 @@ Code has been only set up locally. To run the bot, follow these steps:
 
 ## Known issues
 
+- slot values persist after inquiry. 
+- still some typo intolerance. 
 
 ## Future features
 
