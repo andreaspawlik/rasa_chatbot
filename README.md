@@ -40,6 +40,7 @@ Code has been only set up locally. To run the bot, follow these steps:
 
 - slot values persist after inquiry. 
 - still some typo intolerance. 
+- asking "how much is an iphone 13", and the bot asks "which brand do you want?" (bot should infer the brand!)
 
 ## Future features
 
