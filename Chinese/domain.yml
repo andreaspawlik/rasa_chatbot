@@ -1,0 +1,108 @@
+version: '3.1'
+
+intents:
+- ask_bot_name
+- ask_feelings
+- ask_other_articles
+- ask_price
+- bot_challenge
+- buy_phone
+- goodbye
+- greet
+- offend
+- out_of_scope
+
+responses:
+  utter_greet:
+# please comment out each text line and add the Chinese translation below
+#  - text: Hey! How are you?
+  - 嗨！最近怎么样？
+  utter_goodbye:
+  # - text: Bye
+  - text: 再见
+  utter_phone_form_filled:
+  # - text: All slots are filled. well done!
+  - text: 所有字段都填写完了，好样的！
+  utter_ask_brand:
+  # - text: Which brand do you want?
+  - text: 您想要哪个品牌？
+  utter_ask_model:
+  # - text: Which model do you want?
+  - text: 您想要哪一款手机？
+  utter_ask_color:
+  # - text: Which color do you want?
+  - text: 您想要哪一种颜色的手机？
+  utter_ask_storage:
+  # - text: How large should the memory be?
+  - text: 内存要多大的？
+  utter_please_rephrase: ## this is used if the detection probability is below threshod, see config.yml
+  # - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  - text: 抱歉，我没明白，您能换一种说法吗？
+  utter_buy_phone:
+  # - text: Which phone do you like?
+  - text: 您喜欢哪种手机？
+  utter_bot_challenge:
+  # - text: I am a bot, able to tell you all about the phones we sell.
+  - text: 我虽然是个机器人，但是可以给您介绍我们卖的手机。
+  utter_offend:
+  # - text: Pleas dont be rude! I try my best.
+  - text: 请别那么粗鲁！我已经尽力了。
+  utter_ask_feelings:
+  # - text: I feel great today! I enjoy looking forward to tell you all about the phones we sell :)
+  - text: 我今天感觉好极了! 期待能给您介绍我们卖的手机。:)
+  utter_ask_other_articles:
+  # - text: I am sorry, but by now we just selling phones.
+  - text: 抱歉，目前我们只卖手机。
+  utter_out_of_scope:
+  # - text: Sorry, I can't handle that request.
+  - text: 抱歉，我不能处理那个请求。
+  utter_ask_bot_name:
+  # - text: I have no human Name. But other bots refer to me as 00110101011110101011010101101000010110
+  - text: 我没有人类的名字，其他机器人叫我00110101011110101011010101101000010110。
+  utter_slots_values:
+  - text: "{brand}, {model}, {color}, {storage}"
+
+actions:
+- action_provide_price
+- utter_ask_feelings
+- utter_phone_form_filled
+- utter_slots_values
+
+entities:
+- model
+- brand
+- storage
+- color
+
+slots:
+  brand:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: brand
+  model:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: model
+  color:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: color
+  storage:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: storage
+forms:
+  phone_form:
+    required_slots:
+    - brand
+    - model
+    - color
+    - storage
+    
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

@@ -1,0 +1,169 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+# please comment out each line and add the Chinese translation
+#    - hey
+    - 嗨
+    # - hello
+    - 你好
+    # - hi
+    - 嗨
+    # - hello there
+    - 你好
+    # - good morning
+    - 早上好
+    # - good evening
+    - 晚上好
+    # - moin
+    - 你好
+    # - hey there
+    - 嗨
+    # - let's go
+    - 嗨
+    # - hey dude
+    - 嗨
+    # - goodmorning
+    - 早
+    # - goodevening
+    - 晚上好
+    # - good afternoon
+    - 下午好
+- intent: goodbye
+  examples: |
+    # - cu
+    - 再见
+    # - good by
+    - 再见
+    # - cee you later
+    - 再见
+    # - good night
+    - 晚安
+    # - bye
+    - 再见
+    # - goodbye
+    - 再见
+    # - have a nice day
+    - 祝您愉快！
+    # - see you around
+    - 再见
+    # - bye bye
+    - 再见
+    # - see you later
+    - 再会
+- intent: ask_price
+  examples: |
+    # - How much is an [iPhone 13](model)?
+    - [iPhone 13](model)多少钱?
+    # - How much does a top-tier [SAMSUNG](brand) [S22 Ultra](model) cost?
+    - 顶配版的[三星](brand)[S22 Ultra](model)多少钱？
+    # - How much does a [SAMSUNG](brand) [S22 Ultra](model) in [white](color) with [128G](storage) cost?
+    - [白色](color)[128G](storage)的[三星](brand)[S22 Ultra](model)多少钱？
+    # - How much is an [Apple](brand) [iPhone 13](model) in [green](color) with [256G](storage)?
+    - [绿色](color)[256G](storage)的[苹果](brand)[iPhone 13](model)多少钱？
+    # - How much is a [samsung](brand) [s22](model) in [black](color) with [512G](storage)?
+    - [黑色](color)[512G](storage)的[三星](brand)[s22](model)多少钱？
+    # - how much is [samsung](brand) [s22](model) in [black](color) with [512G](storage)?
+    - [黑色](color)[512G](storage)的[三星](brand)[s22](model)多少钱？
+    # - how much is [Samsung](brand) [S22 Ultra](model) in [Black](color) with [512G](storage)?
+    - [黑色](color)[512G](storage)的[三星](brand)[S22 Ultra](model)多少钱？
+    # - how much is [Samsung](brand) [S22 Ultra](model) in [white](color) with [256G](storage)?
+    - [白色](color)[256G](storage)的[三星](brand)[S22 Ultra](model)多少钱？
+    # - how much is [Huawei](brand) [P50 Pro](model) in [green](color) with [512G](storage)?
+    - [绿色](color)[512G](storage)的[华为](brand)[P50 Pro](model)多少钱？
+    # - how much is [Huawei](brand) [P50](model) in [pink](color) with [512G](storage)?
+    - [粉色](color)[512G](storage)的[华为](brand)[P50](model)多少钱？
+    # - how much is [apple](brand) [iPhone 13 mini](model) in [red](color) with [512G](storage)?
+    - [红色](color)[512G](storage)的[苹果](brand)[iPhone 13 mini](model)多少钱？
+    # - how much is [apple](brand) [iphone 13 pro max](model) in [white](color) with [1TB](storage)?
+    - [白色](color)[1TB](storage)的[苹果](brand)[iphone 13 pro max](model)多少钱？
+    # - how much is [Samsung](brand) [S22 Ultra](model) in [blue](color) with [1TB](storage)?
+    - [蓝色](color)[1TB](storage)的[三星](brand)[S22 Ultra](model)多少钱？
+    # - What does an [Huawai](brand) with [512GB](storage) costs?
+    - [512G](storage)的[华为](brand)手机多少钱？
+    # - What is the price of a [Apple](brand) [iphone 13](model)?
+    - [苹果](brand)[iPhone 13](model)的价格是多少？
+- intent: offend
+  examples: |
+    # - I hate you!
+    - 我恨你
+    # - You are worthless
+    - 真没用
+    # - You are a bad Chat Bot
+    - 你很烂
+    # - You cant do shit
+    - 你啥也不能做
+- intent: buy_phone
+  examples: |
+    # - I would like to buy a phone.
+    - 我想买个手机
+    # - do you sell phones?
+    - 你们卖手机吗？
+    # - Can i buy a phone from you?
+    - 能从你这儿买手机吗？
+    # - do you have phones?
+    - 你有手机卖吗？
+    # - I want a phone
+    - 我想要个手机
+    # - phones
+    - 手机
+- intent: bot_challenge
+  examples: |
+    # - are you a bot?
+    - 你是机器人吗？
+    # - are you a human?
+    - 你是人吗？
+    # - am I talking to a bot?
+    - 我是在和机器人说话吗？
+    # - am I talking to a human?
+    - 我是在和真人说话吗？
+- intent: ask_feelings
+  examples: |
+    # - how are you?
+    - 最近怎么样？
+    # - are you fine?
+    - 你好吗？
+    # - how do you feel?
+    - 感觉咋样？
+    # - what do you feel?
+    - 啥感觉呀？
+    # - do you feel?
+    - 你感觉？
+    # - how is your mood?
+    - 心情如何？
+- intent: ask_other_articles
+  examples: |
+    # - are you selling friges?
+    - 卖冰箱吗？
+    # - are you selling chocolate?
+    - 卖巧克力吗？
+    # - do you sell other thinks then phones?
+    - 除了手机还卖其他啥吗？
+    # - do you sell other tinks?
+    - 还卖点其他东西吗？
+    # - can i buy anything els from you?
+    - 能从您这儿买点其他东西吗？
+- intent: out_of_scope
+  examples: |
+    # - what is 2+2?
+    - 2+2等于几？
+    # - how old is the earth?
+    - 地球的年龄有多大？
+    # - do you like chicken?
+    - 你喜欢鸡肉吗？
+    # - who is the president of the US right now?
+    - 现在谁是美国总统？
+    # - is there a dark side of the moon?
+    - 月球有黑暗面吗？
+- intent: ask_bot_name
+  examples: |
+    # - what your name?
+    - 你叫什么名字？
+    # - do you have name?
+    - 你有名字吗？
+    # - tell me your name
+    - 告诉我你的名字
+    # - give me your name
+    - 把名字告诉我
