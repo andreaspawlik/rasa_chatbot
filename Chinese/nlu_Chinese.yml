@@ -4,8 +4,7 @@ nlu:
 
 - intent: greet
   examples: |
-# please comment out each line and add the Chinese translation
-#    - hey
+    # - hey
     - 嗨
     # - hello
     - 你好

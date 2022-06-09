@@ -16,7 +16,7 @@ responses:
   utter_greet:
 # please comment out each text line and add the Chinese translation below
 #  - text: Hey! How are you?
-  - 嗨！最近怎么样？
+  - text: 嗨！最近怎么样？
   utter_goodbye:
   # - text: Bye
   - text: 再见
