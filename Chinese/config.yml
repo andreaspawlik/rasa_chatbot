@@ -14,10 +14,15 @@ pipeline:
 #- name: WhitespaceTokenizer
 #- name: RegexFeaturizer
 #- name: LexicalSyntacticFeaturizer
-- name: SpacyNLP
-  model: zh_core_web_sm
-- name: SpacyTokenizer
-- name: SpacyFeaturizer
+#- name: SpacyNLP
+#  model: zh_core_web_trf
+#- name: MitieNLP
+#  model: 
+#- name: SpacyTokenizer
+- name: JiebaTokenizer
+#- name: SpacyFeaturizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
 - name: CountVectorsFeaturizer
   analyzer: char_wb
